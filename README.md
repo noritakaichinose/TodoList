@@ -65,4 +65,6 @@ cd ../back
 npm run dev
 ```
 
-フロントエンドはhttp://localhost:3000、バックエンドはhttp://localhost:5000でアクセス可能です。
+フロントエンドは http://localhost:3000
+バックエンドは http://localhost:5000
+でアクセス可能です。
