@@ -29,3 +29,42 @@
 ```bash
 git clone https://github.com/あなたのユーザー名/Todoアプリ.git
 cd Todoアプリ
+```
+
+### 2. 環境変数の設定
+バックエンド（backフォルダ）内に.envファイルを作成し、以下のように環境変数を設定します。
+
+```bash
+MONGODB_URI=あなたのMongoDB接続URI
+JWT_SECRET=あなたのJWTシークレットキー
+PORT=5000
+```
+
+### 3. 依存関係のインストール
+
+```bash
+# フロントエンド
+cd front
+npm install
+
+# バックエンド
+cd ../back
+npm install
+```
+
+### 4. ローカル開発サーバーの起動
+以下のコマンドを使用して、フロントエンドとバックエンドの開発サーバーを起動します。
+
+```bash
+# フロントエンド
+cd front
+npm start
+
+# バックエンド
+cd ../back
+npm run dev
+```
+
+フロントエンドは http://localhost:3000
+バックエンドは http://localhost:5000
+でアクセス可能です。
