@@ -35,3 +35,4 @@ build/
 /front/dist/
 /back/node_modules/
 /back/dist/
+/back/.env
