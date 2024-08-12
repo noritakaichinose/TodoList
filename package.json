@@ -1,0 +1,14 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix front\" \"npm run start --prefix back\"",
+    "install-all": "npm install --prefix front && npm install --prefix back"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17"
+  }
+}
