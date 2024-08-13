@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL !== null ? process.env.REACT_APP_API_URL : "";
+
 export const register = async (username: string, email: string, password: string) => {
   try {
-    const response = await axios.post('/api/auth/signup', { username, email, password });
+    const response = await axios.post(`${API_URL}/api/auth/signup`, { username, email, password });
     return response.data;
   } catch (err: any) {
     console.error('アカウント登録失敗:', err);
@@ -12,7 +14,7 @@ export const register = async (username: string, email: string, password: string
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post('./api/auth/login', { email, password });
+    const response = await axios.post(`${API_URL}/api/auth/login`, { email, password });
     const token = response.data.token;
     localStorage.setItem('token', token);
     return token;

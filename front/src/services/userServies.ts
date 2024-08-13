@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { getToken } from './authService';
 
+const API_URL = process.env.REACT_APP_API_URL !== null ? process.env.REACT_APP_API_URL : "";
+
 export const getUserDetails = async () => {
   const token = getToken();
 
   try {
-    const response = await axios.get('/api/user/', {
+    const response = await axios.get(`${API_URL}/api/user/`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     return response.data;
@@ -19,7 +21,7 @@ export const updateUser = async (email: string, password: string) => {
   const token = getToken();
 
   try {
-    const response = await axios.put('/api/user/update', { email, password }, {
+    const response = await axios.put(`${API_URL}/api/user/update`, { email, password }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     return response
@@ -32,7 +34,7 @@ export const updateUser = async (email: string, password: string) => {
 export const deleteUser = async () => {
   const token = getToken();
   try {
-    const response = await axios.delete('/api/user/delete', {
+    const response = await axios.delete(`${API_URL}/api/user/delete`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     return response;
