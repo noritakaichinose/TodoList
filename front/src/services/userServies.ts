@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getToken } from './authService';
 
-const API_URL = `https://todo-list-back-rust.vercel.app/`;
+const API_URL = `https://todo-list-back-rust.vercel.app`;
 
 export const getUserDetails = async () => {
   const token = getToken();

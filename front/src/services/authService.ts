@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = `https://todo-list-back-rust.vercel.app/`;
+const API_URL = `https://todo-list-back-rust.vercel.app`;
 
 export const register = async (username: string, email: string, password: string) => {
   try {

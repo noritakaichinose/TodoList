@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './authService';
 import { Todo } from '../types/todo';
 
-const API_URL = `https://todo-list-back-rust.vercel.app/`;
+const API_URL = `https://todo-list-back-rust.vercel.app`;
 
 export const fetchTodos = async () => {
   const token = getToken();
