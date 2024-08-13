@@ -2,7 +2,6 @@ import axios from 'axios';
 import { getToken } from './authService';
 import { Todo } from '../types/todo';
 
-
 export const fetchTodos = async () => {
   const token = getToken();
   try {
