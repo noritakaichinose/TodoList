@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { TextField, Button, Box, Alert } from '@mui/material';
 import { isValidEmail } from '../utils/ValidationEmail';
 import { reducer, initialState } from '../reducers/authReducer';
@@ -27,6 +27,12 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, error }) => {
       dispatch({ type: 'SET_ERROR', payload: err.message });
     }
   };
+
+  useEffect(() => {
+    if (error !== null) {
+      dispatch({ type: 'SET_ERROR', payload: error });
+    }
+  }, [error]);
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>

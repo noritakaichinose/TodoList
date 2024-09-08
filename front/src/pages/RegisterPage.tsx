@@ -14,6 +14,8 @@ const RegisterPage: React.FC = () => {
       await register(username!, email, password);
       navigate('/login');
     } catch (err: any) {
+      console.log('here');
+      console.log(err.message);
       setError(err.message);
     }
   }
