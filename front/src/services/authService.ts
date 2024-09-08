@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 export const register = async (username: string, email: string, password: string) => {
   try {
-    const response = await axios.post(`http://localhost:5000/api/auth/signup`, { username, email, password });
+    const response = await axios.post(`${BACKEND_URL}/api/auth/signup`, { username, email, password });
     return response.data;
   } catch (err: any) {
     console.error('アカウント登録失敗:', err);
@@ -12,9 +14,9 @@ export const register = async (username: string, email: string, password: string
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post(`http://localhost:5000/api/auth/login`, { email, password });
+    const response = await axios.post(`${BACKEND_URL}/api/auth/login`, { email, password });
     const token = response.data.token;
-    localStorage.setItem('token', token);
+    sessionStorage.setItem('token', token);
     return token;
   } catch (err: any) {
     console.error('ログイン失敗:', err);
@@ -23,14 +25,14 @@ export const login = async (email: string, password: string) => {
 };
 
 export const logout = () => {
-  localStorage.removeItem('token');
+  sessionStorage.removeItem('token');
 }
 
 export const getToken = () => {
-  return localStorage.getItem('token');
+  return sessionStorage.getItem('token');
 };
 
 export const isAuthenticated = (): boolean => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   return !!token;
 }
