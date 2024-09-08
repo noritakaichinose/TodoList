@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: ['https://todo-list-ebon-iota-65.vercel.app/'],
+  origin: true,
   methods: ['POST', 'GET', 'PUT', 'DELETE']
 }));
 
