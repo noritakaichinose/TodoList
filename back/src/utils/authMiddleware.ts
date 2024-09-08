@@ -19,7 +19,7 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const decodedToken = jwt.verify(token, 'YOUR_SECRET_KEY') as JwtPayload;
 
     // デコードされたトークンからuserIdをリクエストオブジェクトに保存
-    req.userData = { userId: decodedToken.userId };
+    req.userData = { userId: decodedToken.userId as string | JwtPayload };
 
     // 次のミドルウェアまたはルートハンドラに制御を渡す
     next();
