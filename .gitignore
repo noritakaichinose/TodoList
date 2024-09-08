@@ -26,14 +26,11 @@ coverage/
 Thumbs.db
 
 # Build directories
-dist/
 build/
 
 # Ignore specific files/folders in front and back
 /front/node_modules/
 /front/build/
-/front/dist/
 /front/.env
 /back/node_modules/
-/back/dist/
 /back/.env
