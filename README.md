@@ -3,7 +3,8 @@
 このリポジトリは、フロントエンドとバックエンドが連携したシンプルなTodoリストアプリケーションを提供します。フロントエンドはReactとTypeScriptで、バックエンドはNode.jsとExpressで構築されています。認証機能を実装しており、ユーザーごとにTodoリストを管理できます。
 
 ## デモ
-未着手
+Vercelにデプロイしたデモ  
+https://todo-list-jet-two.vercel.app/login
 
 ## 機能
 
