@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors({
   origin: ['https://todo-list-jet-two.vercel.app'],
-  methods: ['POST', 'GET', 'PUT', 'DELETE']
+  credentials: true
+  // methods: ['POST', 'GET', 'PUT', 'DELETE']
 }));
 
 app.use(express.json());
