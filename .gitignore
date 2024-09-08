@@ -31,6 +31,8 @@ build/
 # Ignore specific files/folders in front and back
 /front/node_modules/
 /front/build/
+/front/.env.development
 /front/.env
 /back/node_modules/
+/back/.env.development
 /back/.env

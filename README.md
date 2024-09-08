@@ -32,11 +32,15 @@ cd Todoアプリ
 ```
 
 ### 2. 環境変数の設定
+フロントエンド(frontフォルダ)内に.envを作成し、以下のように環境変数を設定します。
+```bash
+REACT_APP_BACKEND_URL=http://localhost:5000
+```
+
 バックエンド（backフォルダ）内に.envファイルを作成し、以下のように環境変数を設定します。
 
 ```bash
-MONGODB_URI=あなたのMongoDB接続URI
-JWT_SECRET=あなたのJWTシークレットキー
+MONGODB_URI=MongoDB接続URI
 PORT=5000
 ```
 
