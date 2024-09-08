@@ -2,12 +2,10 @@ import axios from 'axios';
 import { getToken } from './authService';
 import { Todo } from '../types/todo';
 
-const URL = process.env.BACKEND_URL;
-
 export const fetchTodos = async () => {
   const token = getToken();
   try {
-    const response = await axios.get(`${URL}/api/`, {
+    const response = await axios.get(`http://localhost:5000/api/`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     return response;
@@ -20,7 +18,7 @@ export const fetchTodos = async () => {
 export const addTodo = async (title: string) => {
   const token = getToken();
   try {
-    const response = await axios.post(`${URL}/api/add`, { title }, {
+    const response = await axios.post(`http://localhost:5000/api/add`, { title }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     return response;
@@ -33,7 +31,7 @@ export const addTodo = async (title: string) => {
 export const deleteTodo = async (id: string) => {
   const token = getToken();
   try {
-    await axios.delete(`${URL}/api/delete/${id}`, {
+    await axios.delete(`http://localhost:5000/api/delete/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
   } catch (err: any) {
@@ -45,7 +43,7 @@ export const deleteTodo = async (id: string) => {
 export const editTodo = async (id: string, updatedTodo: Todo) => {
   const token = getToken();
   try {
-    const response = await axios.put(`${URL}/api/update/${id}`, updatedTodo, {
+    const response = await axios.put(`http://localhost:5000/api/update/${id}`, updatedTodo, {
       headers: { Authorization: `Bearer ${token}` }
     });
     return response;

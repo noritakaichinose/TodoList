@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const URL = process.env.BACKEND_URL;
-
 export const register = async (username: string, email: string, password: string) => {
   try {
-    const response = await axios.post(`${URL}/api/auth/signup`, { username, email, password });
+    const response = await axios.post(`http://localhost:5000/api/auth/signup`, { username, email, password });
     return response.data;
   } catch (err: any) {
     console.error('アカウント登録失敗:', err);
@@ -14,7 +12,7 @@ export const register = async (username: string, email: string, password: string
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post(`${URL}/api/auth/login`, { email, password });
+    const response = await axios.post(`http://localhost:5000/api/auth/login`, { email, password });
     const token = response.data.token;
     localStorage.setItem('token', token);
     return token;
